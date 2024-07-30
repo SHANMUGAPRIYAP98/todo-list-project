@@ -281,4 +281,19 @@ Logout
   - Send email notifications as ***reminders*** for **high** priority task those are not completed.
   - We can provide reward points if all the tasks are ***completed***
   - Provide ***motivational quotes*** to push them to complete the work.
+
+## DEPLOYMENT
+
+Steps to deploy node.js project to ***render***
+
+    - login to render website and choose the service as web service
+    - select the public github repo
+   ![alt text](deploy-ss1.png)
+
+     - provide the project build and start command 
+ ![alt text](screenshot1.png)
+    
+     - service will start deploying
+![alt text](deploy2.png)
+![alt text](deploy3.png)
     
