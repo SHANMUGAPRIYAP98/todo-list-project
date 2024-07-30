@@ -6,6 +6,7 @@ import loginController from './src/controller/loginController';
 import dbConnection from './src/helpers/dbConnection';
 import todoRouter from './src/router/todoRoutes';
 import logoutController from './src/controller/logoutController';
+import { sessionController } from './src/controller/sessionController';
 
 const app = express();
 app.use(cors());
@@ -28,6 +29,8 @@ app.post('/logout', logoutController);
 dbConnection();
 
 app.use('/todos', todoRouter);
+
+app.get("/session/:user_id", sessionController);
 
 app.listen(9000, () => {
     console.log("Listening to 9000 port");

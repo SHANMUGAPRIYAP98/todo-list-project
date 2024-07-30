@@ -9,6 +9,7 @@
    - Download Node.js using this [Node.js](https://nodejs.org/en/download/source-code/current) Link
    - Check the version once installed using `node -v`
    - Clone the project using the [Github Link](https://github.com/SHANMUGAPRIYAP98/todo-list-project) using `git clone https://github.com/SHANMUGAPRIYAP98/todo-list-project`
+   - CD to project directory ex: cd backend
    - Install the node_modules using `npm install`
    - Run the project using `npm run start`
 
@@ -39,12 +40,41 @@ API for managing todo lists
 
 ## Version: 1.0.0
 
+### /register
+
+#### POST
+##### Summary:
+
+User Registration
+
+##### Request
+
+| Fields| Mandatory |
+| ----  | ----------|
+| email    | yes |
+| password | yes |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | User Registered successfully! |
+| 400 | email and password are required |
+| 500 | User Registered Failed |
+
 ### /login
 
 #### POST
 ##### Summary:
 
 Login user
+
+##### Request
+
+| Fields| Mandatory |
+| ----  | ----------|
+| email    | yes |
+| password | yes |
 
 ##### Responses
 
@@ -79,6 +109,17 @@ Get all todos
 ##### Summary:
 
 Create a new todo
+
+##### Request
+
+| Fields| Mandatory |
+| ----  | ----------|
+|  task_name   | yes |
+| due_date | yes |
+| priority    | no |
+| status | no |
+|   created_at  | no |
+| updated_at | no |
 
 ##### Responses
 
@@ -126,6 +167,15 @@ Get a todo by ID
 
 Update a todo by ID
 
+##### Request
+
+| Fields| Mandatory |
+| ----  | ----------|
+|  task_name   | no |
+| due_date | no |
+| priority    | no |
+| status | no |
+
 ##### Parameters
 
 | Name | Located in | Description | Required | Schema |
@@ -171,7 +221,60 @@ Delete a todo by ID
 | --- | --- |
 | bearerAuth | |
 
+#### GET
+##### Summary:
+
+Get user session By ID
+
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | string |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | User Session fetched successfully |
+| 404 | Session not found |
+| 500 | Failed to fetch Session By Id |
+
+##### Security
+
+| Security Schema | Scopes |
+| --- | --- |
+| bearerAuth | |
+
+#### POST
+##### Summary:
+
+Logout
+
+##### Request
+
+| Fields| Mandatory |
+| ----  | ----------|
+|  sessionId   | yes |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Logout successful |
+| 404 | Session not found |
+| 500 | Failed to Logout |
+
+##### Security
+
+| Security Schema | Scopes |
+| --- | --- |
+| bearerAuth | |
+
 **5. Database Schema :**
+
+![alt text](<Blank document.png>)
+
 
 **6. Future Improvements :**
   
