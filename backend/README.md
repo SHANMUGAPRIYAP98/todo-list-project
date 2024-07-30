@@ -273,7 +273,7 @@ Logout
 
 **5. Database Schema :**
 
-![alt text](<Blank document.png>)
+![alt text](database_design.png)
 
 
 **6. Future Improvements :**
