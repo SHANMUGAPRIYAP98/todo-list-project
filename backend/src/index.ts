@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from "cors";
 import bodyParser from 'body-parser';
-import registerController from './src/controller/registerController';
-import loginController from './src/controller/loginController';
-import dbConnection from './src/helpers/dbConnection';
-import todoRouter from './src/router/todoRoutes';
-import logoutController from './src/controller/logoutController';
-import { sessionController } from './src/controller/sessionController';
+import registerController from './controller/registerController';
+import loginController from './controller/loginController';
+import dbConnection from './helpers/dbConnection';
+import todoRouter from './router/todoRoutes';
+import logoutController from './controller/logoutController';
+import { sessionController } from './controller/sessionController';
 
 const app = express();
 app.use(cors());
